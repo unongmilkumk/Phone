@@ -1,4 +1,4 @@
-package io.github.jesecci
+package io.github.plus
 
 
 @Target(AnnotationTarget.FIELD, AnnotationTarget.FUNCTION, AnnotationTarget.CLASS)

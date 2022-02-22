@@ -1,2 +1,2 @@
-rootProject.name = "Colorful"
+rootProject.name = "PlusStat"
 

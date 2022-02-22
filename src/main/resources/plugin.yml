@@ -1,10 +1,9 @@
-name: Colorful
-version: 0.1.0
-main: io.github.jesecci.Main
+name: PlusStat
+version: 1.0.0
+main: io.github.plus.Main
 api-version: 1.18
-author: jesecci
-description: wild expanding plugin
+author: plus
+description: first plugin for our team
 libraries:
   - org.jetbrains.kotlin:kotlin-stdlib:1.6.10
-  - io.github.monun:kommand:2.8.0
 commands:

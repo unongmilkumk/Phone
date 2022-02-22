@@ -1,34 +1,16 @@
-package io.github.jesecci
+package io.github.plus
 
-import io.github.monun.kommand.getValue
-import io.github.monun.kommand.kommand
+import org.bukkit.ChatColor
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
 
 class Main : JavaPlugin(), Listener {
 
     override fun onEnable() {
-        server.consoleSender.sendMessage("림하")
-        server.pluginManager.registerEvents(Test(), this@Main)
-        setUpCommands()
+        server.consoleSender.sendMessage("${ChatColor.GREEN}플러그인이 활성화 되었습니다.")
     }
     override fun onDisable() {
-        server.consoleSender.sendMessage("림바")
+        server.consoleSender.sendMessage("${ChatColor.GREEN}플러그인이 활성화 되었습니다.")
     }
-
-    @Name("커맨드 세팅")
-   fun setUpCommands(){
-        kommand{
-            register("health"){
-                then("value" to int()){
-                    executes {
-                        val value : Int by it
-                        player.maxHealth = value.toDouble()
-                    }
-                }
-            }
-        }
-    }
-
 
 }
