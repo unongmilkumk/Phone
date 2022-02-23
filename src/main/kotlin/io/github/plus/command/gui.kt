@@ -1,14 +1,18 @@
 package io.github.plus.command
 
+import io.github.plus.Tools.Item
+import org.bukkit.Material
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 
-class Test : CommandExecutor {
+class gui : CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
-        if (label.contentEquals("test")) {
-            sender.sendMessage("why did you press this command?")
+        if (command.name.equals("stat", true)) {
+            val item = Item()
+            item.createItemStack(Material.ACACIA_BOAT, "", "")
         }
+
         return true
     }
 }
