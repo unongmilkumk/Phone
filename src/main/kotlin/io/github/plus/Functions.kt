@@ -1,8 +1,13 @@
 package io.github.plus
 
+import io.github.plus.Tools.Item
 import net.kyori.adventure.text.Component
 import net.md_5.bungee.api.ChatMessageType
+import org.bukkit.Material
 import org.bukkit.entity.Player
+import org.bukkit.inventory.Inventory
+import org.bukkit.inventory.ItemStack
+import org.bukkit.inventory.meta.ItemMeta
 import org.bukkit.plugin.Plugin
 import org.bukkit.scheduler.BukkitRunnable
 import java.awt.TextComponent
