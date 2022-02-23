@@ -7,3 +7,6 @@ description: first plugin for our team
 libraries:
   - org.jetbrains.kotlin:kotlin-stdlib:1.6.10
 commands:
+  test:
+    description: test
+    Usage: /<command>
