@@ -11,4 +11,5 @@ class TestEvent : Listener {
         val p : Player = e.player
         p.sendMessage("You entered to the bed")
     }
+
 }
