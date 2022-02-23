@@ -1,6 +1,7 @@
 package io.github.plus
 
 import io.github.plus.command.Test
+import io.github.plus.event.TestEvent
 import org.bukkit.ChatColor
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
@@ -12,7 +13,10 @@ class Main : JavaPlugin(), Listener {
 
         //커맨드 setExecutor + setTabCompleter
         server.getPluginCommand("test")?.setExecutor(Test())
-//ㅇㅇㅇ
+
+        //이벤트
+        server.pluginManager.registerEvents(TestEvent(), this)
+
     }
 
     override fun onDisable() {
