@@ -5,10 +5,10 @@ import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 
 class Test : CommandExecutor {
-
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
-        sender.sendMessage("test!")
+        if (label.contentEquals("test")) {
+            sender.sendMessage("why did you press this command?")
+        }
         return true
     }
-
 }
