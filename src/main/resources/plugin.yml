@@ -3,7 +3,10 @@ version: 1.0.0
 main: io.github.plus.Main
 api-version: 1.18
 author: plus
-description: first plugin for our team
+description: Stat Plugin to use in RPG
 libraries:
   - org.jetbrains.kotlin:kotlin-stdlib:1.6.10
 commands:
+  test:
+    description: test
+    Usage: /<command>
