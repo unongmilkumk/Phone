@@ -18,7 +18,7 @@ class Item {
 
         itemmeta.lore(list)
 
-        item.itemMeta=itemmeta
+        item.itemMeta = itemmeta
 
         return item
 

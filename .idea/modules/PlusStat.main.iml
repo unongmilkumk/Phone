@@ -6,7 +6,6 @@
         <autoDetectTypes>
           <platformType>PAPER</platformType>
           <platformType>MCP</platformType>
-          <platformType>SPIGOT</platformType>
           <platformType>ADVENTURE</platformType>
         </autoDetectTypes>
       </configuration>
