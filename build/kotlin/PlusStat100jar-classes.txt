@@ -1,0 +1,1 @@
+C:\Users\user\IdeaProjects\plus-test\build\classes\kotlin\main\io\github\plus\Functions.class;C:\Users\user\IdeaProjects\plus-test\build\classes\kotlin\main\io\github\plus\Inf.class;C:\Users\user\IdeaProjects\plus-test\build\classes\kotlin\main\io\github\plus\Main.class;C:\Users\user\IdeaProjects\plus-test\build\classes\kotlin\main\io\github\plus\Name.class
