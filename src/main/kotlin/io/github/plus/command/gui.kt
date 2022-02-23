@@ -12,6 +12,7 @@ class gui : CommandExecutor {
             val item = Item()
             item.createItemStack(Material.ACACIA_BOAT, "", "")
         }
+
         return true
     }
 }
