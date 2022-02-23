@@ -1,4 +1,4 @@
-package io.github.plus.Tools
+package io.github.plus.tools
 
 import net.kyori.adventure.text.Component
 import org.bukkit.Material
