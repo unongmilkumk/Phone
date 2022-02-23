@@ -18,11 +18,3 @@ class Main : JavaPlugin(), Listener {
     }
 
 }
-
-
-
-
-
-
-
-
