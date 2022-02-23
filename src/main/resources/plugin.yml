@@ -10,4 +10,7 @@ commands:
   stat:
     description: stat
     Usage: /<command>
+  sample:
+    description: Don't Use it
+    Usage: Don't Use
 
