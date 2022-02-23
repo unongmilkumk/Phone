@@ -6,7 +6,6 @@ import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerBedEnterEvent
 
 class TestEvent : Listener {
-
     @EventHandler
     fun testEvent(e: PlayerBedEnterEvent){
         val p : Player = e.player
