@@ -14,7 +14,7 @@ class Main : JavaPlugin(), Listener {
 
     }
     override fun onDisable() {
-        server.consoleSender.sendMessage("${ChatColor.GREEN}플러그인이 활성화 되었습니다.")
+        server.consoleSender.sendMessage("${ChatColor.GREEN}플러그인이 비활성화 되었습니다.")
     }
 
 }
