@@ -12,7 +12,7 @@ class Main : JavaPlugin(), Listener {
 
         //커맨드 setExecutor + setTabCompleter
         server.getPluginCommand("test")?.setExecutor(Test())
-//
+//ㅇㅇㅇ
     }
 
     override fun onDisable() {
