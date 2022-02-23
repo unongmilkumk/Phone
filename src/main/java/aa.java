@@ -5,8 +5,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 public class aa implements Listener {
 
     @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event){
-        event.getPlayer().sendMessage("안녕하세요");
+    public void onPlayerJoin(PlayerJoinEvent e){
+        e.getPlayer().sendMessage("안녕하세요");
     }
 
 }

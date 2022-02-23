@@ -11,13 +11,13 @@ class Main : JavaPlugin(), Listener {
 
     override fun onEnable() {
         server.consoleSender.sendMessage("${ChatColor.GREEN}플러그인이 활성화 되었습니다.")
-        server.pluginManager.registerEvents(aa(), this@Main)
+
         //커맨드 setExecutor + setTabCompleter
         server.getPluginCommand("test")?.setExecutor(Test())
 
         //이벤트
         server.pluginManager.registerEvents(TestEvent(), this)
-
+        server.pluginManager.registerEvents(aa(), this@Main)
     }
 
     override fun onDisable() {
