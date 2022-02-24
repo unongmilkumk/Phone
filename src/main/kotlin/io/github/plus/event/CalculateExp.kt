@@ -1,4 +1,4 @@
-package io.github.plus.io.github.plus.event
+package io.github.plus.event
 
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener

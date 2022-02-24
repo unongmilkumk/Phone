@@ -1,4 +1,4 @@
-package io.github.plus.io.github.plus.stat
+package io.github.plus.stat
 
 import org.bukkit.entity.Player
 
