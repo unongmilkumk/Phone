@@ -1,8 +1,7 @@
 package io.github.plus.Tools
 
-import io.github.plus.Main
+import io.github.plus.io.github.plus.Main
 import net.kyori.adventure.text.Component
-import net.minecraft.world.level.material.Material
 import org.bukkit.Bukkit
 import org.bukkit.entity.Player
 import org.bukkit.inventory.Inventory

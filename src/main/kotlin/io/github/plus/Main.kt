@@ -1,4 +1,4 @@
-package io.github.plus
+package io.github.plus.io.github.plus
 
 import event.aa
 import io.github.plus.command.gui
