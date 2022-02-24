@@ -5,6 +5,7 @@ import io.github.plus.command.gui
 import io.github.plus.event.TestEvent
 import io.github.plus.io.github.plus.command.CommandSample
 import io.github.plus.io.github.plus.event.CalculateExp
+import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
@@ -12,7 +13,7 @@ import java.io.File
 
 class Main : JavaPlugin(), Listener {
 
-    var fil = File(dataFolder, "stat")
+    var fil = File(Bukkit.getPluginsFolder(), "stat")
 
     override fun onEnable() {
         server.consoleSender.sendMessage("${ChatColor.GREEN}플러그인이 활성화 되었습니다.")
