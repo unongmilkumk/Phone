@@ -1,6 +1,7 @@
 package io.github.plus.io.github.plus
 
 import event.aa
+import io.github.plus.Tools.config
 import io.github.plus.command.gui
 import io.github.plus.event.TestEvent
 import io.github.plus.io.github.plus.command.CommandSample
@@ -13,7 +14,7 @@ import java.io.File
 
 class Main : JavaPlugin(), Listener {
 
-    var fil = File(Bukkit.getPluginsFolder(), "stat")
+    val config = config(this)
 
     override fun onEnable() {
         server.consoleSender.sendMessage("${ChatColor.GREEN}플러그인이 활성화 되었습니다.")
@@ -30,13 +31,16 @@ class Main : JavaPlugin(), Listener {
         server.pluginManager.registerEvents(aa(), this@Main)
         server.pluginManager.registerEvents(CalculateExp(), this@Main)
 
-        if(!fil.exists()) {
-            fil.mkdir()
+        if(!dataFolder.exists()) {
+            dataFolder.mkdir()
         }
+
+        config.reloadconfig()
 
     }
 
     override fun onDisable() {
         server.consoleSender.sendMessage("${ChatColor.GREEN}플러그인이 비활성화 되었습니다.")
+        config.saveconfig()
     }
 }

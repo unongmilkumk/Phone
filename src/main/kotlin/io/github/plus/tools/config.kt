@@ -15,7 +15,7 @@ class config(mainplugin: Main) {
     private var configfile: File? = null
     fun reloadconfig() {
         if (configfile == null) {
-            configfile = File(Bukkit.getPluginsFolder(), "stat/stat.yml")
+            configfile = File(mainplugin.dataFolder, "stat.yml")
         }
         dataconfig = YamlConfiguration.loadConfiguration(configfile!!)
         val defaultstream: InputStream? = mainplugin.getResource("stat.yml")
@@ -44,7 +44,7 @@ class config(mainplugin: Main) {
 
     fun savedefaultconfig() {
         if (configfile == null) {
-            configfile = File(Bukkit.getPluginsFolder(), "stat/stat.yml")
+            configfile = File(mainplugin.dataFolder, "stat.yml")
         }
         if (!configfile!!.exists()) {
             mainplugin.saveResource("stat.yml", false)

@@ -34,6 +34,7 @@ class GUI(main: Main) {
             config.getconfig()!!.set("players." + uuid + ".defense", 0)
             config.getconfig()!!.set("players." + uuid + ".luck", 0)
             config.getconfig()!!.set("players." + uuid + ".health", 0)
+            config.saveconfig()
         }
 
         val stregth: Int = config.getconfig()!!.getInt("players." + uuid + ".strength")
