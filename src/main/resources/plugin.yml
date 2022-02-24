@@ -1,6 +1,6 @@
 name: PlusStat
 version: 1.0.0
-main: io.github.plus.io.github.plus.Main
+main: io.github.plus.Main
 api-version: 1.18
 author: team-plus
 description: Stat Plugin to use in RPG

@@ -1,7 +1,6 @@
-package io.github.plus.Tools
+package io.github.plus.tools
 
-import io.github.plus.io.github.plus.Main
-import org.bukkit.Bukkit
+import io.github.plus.Main
 import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.configuration.file.YamlConfiguration
 import java.io.File

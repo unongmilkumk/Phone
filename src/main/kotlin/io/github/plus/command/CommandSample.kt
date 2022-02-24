@@ -1,4 +1,4 @@
-package io.github.plus.io.github.plus.command
+package io.github.plus.command
 
 import org.bukkit.ChatColor
 import org.bukkit.command.Command
