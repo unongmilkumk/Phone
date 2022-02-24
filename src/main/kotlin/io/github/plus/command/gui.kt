@@ -20,6 +20,8 @@ class gui(main: Main) : CommandExecutor {
                 val gui = GUI(main)
 
                 val inv: Inventory = gui.createGUI("스탯", sender)
+
+                sender.openInventory(inv)
             }
         }
 
