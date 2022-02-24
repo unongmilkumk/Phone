@@ -4,15 +4,15 @@ import event.aa
 import io.github.plus.command.Gui
 import io.github.plus.event.TestEvent
 import io.github.plus.command.CommandSample
-import io.github.plus.io.github.plus.event.CalculateExp
-import io.github.plus.tools.config
+import io.github.plus.event.CalculateExp
+import io.github.plus.tools.Config
 import org.bukkit.ChatColor
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
 
 class Main : JavaPlugin(), Listener {
 
-    val config = config(this)
+    val config = Config(this)
 
     override fun onEnable() {
         server.consoleSender.sendMessage("${ChatColor.GREEN}플러그인이 활성화 되었습니다.")
