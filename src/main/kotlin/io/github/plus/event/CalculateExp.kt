@@ -28,6 +28,11 @@ class CalculateExp : Listener {
     }
     @EventHandler
     fun onLevelUp(e : PlayerLevelChangeEvent){
-        e.player.sendActionBar("§f[§e알림§f] §c레벨 업§f! (§b${e.oldLevel} §f-> §c${e.newLevel}§f)")
+        if (e.oldLevel < e.newLevel) {
+            e.player.sendActionBar("§f[§e알림§f] §c레벨 업§f! (§b${e.oldLevel} §f-> §c${e.newLevel}§f)")
+        }
+        if (e.oldLevel > e.newLevel) {
+            e.player.sendActionBar("§f[§e알림§f] §a레벨 다운§f! (§b${e.oldLevel} §f-> §c${e.newLevel}§f)")
+        }
     }
 }
