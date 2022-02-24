@@ -7,7 +7,7 @@ import org.bukkit.event.player.PlayerBedEnterEvent
 
 class TestEvent : Listener {
     @EventHandler
-    fun testEvent(e: PlayerBedEnterEvent){
+    fun testEvent(e: PlayerBedEnterEvent): Unit{
         val p : Player = e.player
         p.sendMessage("You entered to the bed")
     }
