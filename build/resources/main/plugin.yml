@@ -1,12 +1,16 @@
 name: PlusStat
 version: 1.0.0
-main: io.github.plus.Main
+main: io.github.plus.io.github.plus.Main
 api-version: 1.18
-author: plus
+author: team-plus
 description: Stat Plugin to use in RPG
 libraries:
   - org.jetbrains.kotlin:kotlin-stdlib:1.6.10
 commands:
-  test:
-    description: test
+  stat:
+    description: stat
     Usage: /<command>
+  sample:
+    description: Don't Use it
+    Usage: No Usage
+
