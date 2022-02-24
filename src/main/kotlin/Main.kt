@@ -15,15 +15,15 @@ class Main : JavaPlugin(), Listener {
         server.consoleSender.sendMessage("${ChatColor.GREEN}플러그인이 활성화 되었습니다.")
 
         //커맨드 setExecutor
-        server.getPluginCommand("stat")?.setExecutor(gui())
+        server.getPluginCommand("stat")?.setExecutor(gui(this@Main))
         server.getPluginCommand("sample")?.setExecutor(CommandSample())
 
         //커맨드 setTabCompleter
         server.getPluginCommand("sample")?.setTabCompleter(CommandSample())
 
         //이벤트
-        server.pluginManager.registerEvents(TestEvent(), this)
-        server.pluginManager.registerEvents(aa(), this)
+        server.pluginManager.registerEvents(TestEvent(), this@Main)
+        server.pluginManager.registerEvents(aa(), this@Main)
         server.pluginManager.registerEvents(CalculateExp(), this@Main)
     }
 
