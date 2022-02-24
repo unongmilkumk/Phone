@@ -1,7 +1,7 @@
 package io.github.plus.io.github.plus
 
 import event.aa
-import io.github.plus.command.gui
+import io.github.plus.command.Gui
 import io.github.plus.event.TestEvent
 import io.github.plus.io.github.plus.command.CommandSample
 import io.github.plus.io.github.plus.event.CalculateExp
@@ -19,7 +19,7 @@ class Main : JavaPlugin(), Listener {
         server.consoleSender.sendMessage("${ChatColor.GREEN}플러그인이 활성화 되었습니다.")
 
         //커맨드 setExecutor
-        server.getPluginCommand("stat")?.setExecutor(gui(this@Main))
+        server.getPluginCommand("stat")?.setExecutor(Gui(this@Main))
         server.getPluginCommand("sample")?.setExecutor(CommandSample())
 
         //커맨드 setTabCompleter
