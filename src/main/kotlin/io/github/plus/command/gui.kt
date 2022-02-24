@@ -1,6 +1,6 @@
 package io.github.plus.command
 
-import io.github.plus.Tools.Item
+import io.github.plus.tools.Item
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.command.Command
