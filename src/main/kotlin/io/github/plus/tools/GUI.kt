@@ -15,7 +15,7 @@ class GUI(main: Main) {
 
         val item = Item()
 
-        val config: config = config(main)
+        val config: Config = Config(main)
 
         val uuid: UUID = player.uniqueId
 

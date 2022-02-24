@@ -8,7 +8,7 @@ import java.io.IOException
 import java.io.InputStream
 import java.io.InputStreamReader
 
-class config(mainplugin: Main) {
+class Config(mainplugin: Main) {
     private val mainplugin: Main
     private var dataconfig: FileConfiguration? = null
     private var configfile: File? = null
