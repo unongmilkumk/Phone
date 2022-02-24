@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 import org.bukkit.inventory.Inventory
 
-class gui(main: Main) : CommandExecutor {
+class Gui(main: Main) : CommandExecutor {
     val main: Main
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         if (label.equals("stat", true)) {
