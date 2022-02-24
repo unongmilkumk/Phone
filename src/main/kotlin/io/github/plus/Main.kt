@@ -8,8 +8,11 @@ import io.github.plus.io.github.plus.event.CalculateExp
 import org.bukkit.ChatColor
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
+import java.io.File
 
 class Main : JavaPlugin(), Listener {
+
+    var fil = File(dataFolder, "stat")
 
     override fun onEnable() {
         server.consoleSender.sendMessage("${ChatColor.GREEN}플러그인이 활성화 되었습니다.")
@@ -25,6 +28,11 @@ class Main : JavaPlugin(), Listener {
         server.pluginManager.registerEvents(TestEvent(), this@Main)
         server.pluginManager.registerEvents(aa(), this@Main)
         server.pluginManager.registerEvents(CalculateExp(), this@Main)
+
+        if(!fil.exists()) {
+            fil.mkdir()
+        }
+
     }
 
     override fun onDisable() {

@@ -14,7 +14,7 @@ class config(mainplugin: Main) {
     private var configfile: File? = null
     fun reloadconfig() {
         if (configfile == null) {
-            configfile = File(mainplugin.getDataFolder(), "stat.yml")
+            configfile = File(mainplugin.getDataFolder(), "stat/stat.yml")
         }
         dataconfig = YamlConfiguration.loadConfiguration(configfile!!)
         val defaultstream: InputStream? = mainplugin.getResource("stat.yml")
@@ -43,7 +43,7 @@ class config(mainplugin: Main) {
 
     fun savedefaultconfig() {
         if (configfile == null) {
-            configfile = File(mainplugin.getDataFolder(), "stat.yml")
+            configfile = File(mainplugin.getDataFolder(), "stat/stat.yml")
         }
         if (!configfile!!.exists()) {
             mainplugin.saveResource("stat.yml", false)
