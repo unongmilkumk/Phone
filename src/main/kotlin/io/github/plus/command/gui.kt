@@ -1,24 +1,31 @@
 package io.github.plus.command
 
+import io.github.plus.Main
+import io.github.plus.Tools.GUI
 import io.github.plus.Tools.Item
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
+import org.bukkit.entity.Player
 import org.bukkit.inventory.Inventory
 
-class gui : CommandExecutor {
+class gui(main: Main) : CommandExecutor {
+    val main: Main
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         if (label.equals("stat", true)) {
+            if(sender is Player) {
 
-            val inv: Inventory = Bukkit.createInventory(null, 54, "Stat")
-            val item = Item()
+                val gui = GUI(main)
 
-            val item2 = item.createItemStack(Material.ACACIA_BOAT, "", "")
-            inv.setItem(12, item2)
+                val inv: Inventory = gui.createGUI("스탯", sender)
+            }
         }
 
         return true
+    }
+    init {
+        this.main=main
     }
 }
