@@ -1,7 +1,7 @@
 package io.github.plus.command
 
-import io.github.plus.io.github.plus.Main
-import io.github.plus.Tools.GUI
+import io.github.plus.Main
+import io.github.plus.tools.GUI
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender

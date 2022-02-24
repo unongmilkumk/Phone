@@ -1,7 +1,6 @@
 package io.github.plus.tools
 
-import io.github.plus.io.github.plus.Main
-import io.github.plus.tools.Item
+import io.github.plus.Main
 import net.kyori.adventure.text.Component
 import org.bukkit.Bukkit
 import org.bukkit.entity.Player
