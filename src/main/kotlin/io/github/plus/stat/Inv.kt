@@ -12,10 +12,11 @@ import org.bukkit.inventory.ItemStack
 import io.github.plus.tools.Config
 import io.github.plus.tools.GUI
 
-val inv: ArrayList<Inventory> = ArrayList()
+
 
 class Inv(main: Main) : Listener {
 
+    val inv: ArrayList<Inventory> = ArrayList()
     val gui = GUI(main)
     val config = Config(main)
 

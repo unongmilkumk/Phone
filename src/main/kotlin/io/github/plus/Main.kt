@@ -29,7 +29,7 @@ class Main : JavaPlugin(), Listener {
         server.pluginManager.registerEvents(TestEvent(), this@Main)
         server.pluginManager.registerEvents(aa(), this@Main)
         server.pluginManager.registerEvents(CalculateExp(), this@Main)
-        server.pluginManager.registerEvents(Inv(), this@Main)
+        server.pluginManager.registerEvents(Inv(this), this@Main)
 
         config.reloadconfig()
 
