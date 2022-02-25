@@ -1,5 +1,6 @@
-package io.github.plus.tools
+package io.github.plus.stat
 
+import io.github.plus.tools.Item
 import org.bukkit.Material
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
