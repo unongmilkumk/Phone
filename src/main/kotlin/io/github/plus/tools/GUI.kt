@@ -1,6 +1,7 @@
 package io.github.plus.tools
 
 import io.github.plus.Main
+import io.github.plus.stat.inv
 import net.kyori.adventure.text.Component
 import org.bukkit.Bukkit
 import org.bukkit.entity.Player
@@ -12,6 +13,8 @@ class GUI(main: Main) {
     val main: Main
 
     fun createGUI(text: String, player: Player): Inventory {
+
+
 
         val item = Item()
 
@@ -49,6 +52,8 @@ class GUI(main: Main) {
         inv.setItem(12, item.createItemStack(org.bukkit.Material.ACACIA_BOAT, "방어력", defense.toString()))
         inv.setItem(14, item.createItemStack(org.bukkit.Material.ACACIA_BOAT, "운", luck.toString()))
         inv.setItem(16, item.createItemStack(org.bukkit.Material.ACACIA_BOAT, "체력", health.toString()))
+
+        io.github.plus.stat.inv.add(inv)
 
         return inv
 

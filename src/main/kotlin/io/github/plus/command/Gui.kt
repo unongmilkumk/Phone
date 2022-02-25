@@ -1,6 +1,7 @@
 package io.github.plus.command
 
 import io.github.plus.Main
+import io.github.plus.stat.Inv
 import io.github.plus.tools.GUI
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
@@ -21,6 +22,8 @@ class Gui(main: Main) : CommandExecutor {
                 val inv: Inventory = gui.createGUI("스탯", sender)
 
                 sender.openInventory(inv)
+
+
             }
         }
 
