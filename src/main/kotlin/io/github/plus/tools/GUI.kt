@@ -46,9 +46,9 @@ class GUI(main: Main) {
 
 
         inv.setItem(10, item.createItemStack(org.bukkit.Material.ACACIA_BOAT, "힘", stregth.toString()))
-        inv.setItem(11, item.createItemStack(org.bukkit.Material.ACACIA_BOAT, "방어력", defense.toString()))
-        inv.setItem(12, item.createItemStack(org.bukkit.Material.ACACIA_BOAT, "운", luck.toString()))
-        inv.setItem(13, item.createItemStack(org.bukkit.Material.ACACIA_BOAT, "체력", health.toString()))
+        inv.setItem(12, item.createItemStack(org.bukkit.Material.ACACIA_BOAT, "방어력", defense.toString()))
+        inv.setItem(14, item.createItemStack(org.bukkit.Material.ACACIA_BOAT, "운", luck.toString()))
+        inv.setItem(16, item.createItemStack(org.bukkit.Material.ACACIA_BOAT, "체력", health.toString()))
 
         return inv
 
