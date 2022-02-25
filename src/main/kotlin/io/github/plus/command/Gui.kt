@@ -14,6 +14,8 @@ class Gui(main: Main) : CommandExecutor {
         if (label.equals("stat", true)) {
             if(sender is Player) {
 
+                sender.closeInventory()
+
                 val gui = GUI(main)
 
                 val inv: Inventory = gui.createGUI("스탯", sender)

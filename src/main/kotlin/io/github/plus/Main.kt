@@ -6,7 +6,7 @@ import io.github.plus.event.TestEvent
 import io.github.plus.command.CommandSample
 import io.github.plus.event.CalculateExp
 import io.github.plus.tools.Config
-import io.github.plus.tools.InvClick
+import io.github.plus.stat.Inv
 import org.bukkit.ChatColor
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
@@ -29,7 +29,7 @@ class Main : JavaPlugin(), Listener {
         server.pluginManager.registerEvents(TestEvent(), this@Main)
         server.pluginManager.registerEvents(aa(), this@Main)
         server.pluginManager.registerEvents(CalculateExp(), this@Main)
-        server.pluginManager.registerEvents(InvClick(), this@Main)
+        server.pluginManager.registerEvents(Inv(), this@Main)
 
         config.reloadconfig()
 
