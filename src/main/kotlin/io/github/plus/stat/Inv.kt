@@ -34,30 +34,32 @@ class Inv(main: Main) : Listener {
                 if(p.exp>=70) {
                     p.exp=p.exp-70
 
+                    val multiply = config.getconfig()!!.getInt("multiply")
+
                     if((item.displayName() as TextComponent).content().equals("힘", true)) {
 
-                        config.getconfig()!!.set("players." + p.uniqueId + ".strength", config.getconfig()!!.getInt("players." + p.uniqueId + ".strength")+1)
+                        config.getconfig()!!.set("players." + p.uniqueId + ".strength", config.getconfig()!!.getInt("players." + p.uniqueId + ".strength")+multiply)
                         p.sendMessage("힘 스탯을 찍었습니다")
 
                     }
 
                     if((item.displayName() as TextComponent).content().equals("방어력", true)) {
 
-                        config.getconfig()!!.set("players." + p.uniqueId + ".defense", config.getconfig()!!.getInt("players." + p.uniqueId + ".defense")+1)
+                        config.getconfig()!!.set("players." + p.uniqueId + ".defense", config.getconfig()!!.getInt("players." + p.uniqueId + ".defense")+multiply)
                         p.sendMessage("방어력 스탯을 찍었습니다")
 
                     }
 
                     if((item.displayName() as TextComponent).content().equals("체력", true)) {
 
-                        config.getconfig()!!.set("players." + p.uniqueId + ".health", config.getconfig()!!.getInt("players." + p.uniqueId + ".health")+1)
+                        config.getconfig()!!.set("players." + p.uniqueId + ".health", config.getconfig()!!.getInt("players." + p.uniqueId + ".health")+multiply)
                         p.sendMessage("체력 스탯을 찍었습니다")
 
                     }
 
                     if((item.displayName() as TextComponent).content().equals("운", true)) {
 
-                        config.getconfig()!!.set("players." + p.uniqueId + ".luck", config.getconfig()!!.getInt("players." + p.uniqueId + ".luck")+1)
+                        config.getconfig()!!.set("players." + p.uniqueId + ".luck", config.getconfig()!!.getInt("players." + p.uniqueId + ".luck")+multiply)
                         p.sendMessage("운 스탯을 찍었습니다")
 
                     }
