@@ -10,4 +10,4 @@ Arcdog, Enderpearl, Unongmilk, ehlfg
 ###Command
 /stat to open stat gui
 ###GUI
-*InComplete*
+*InCompleted*
