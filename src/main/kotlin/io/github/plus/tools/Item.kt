@@ -7,8 +7,8 @@ import org.bukkit.inventory.ItemStack
 class Item {
     fun createItemStack(type: Material, name: String, vararg lore: String): ItemStack {
         val item = ItemStack(type)
-        val itemmeta = item.itemMeta
-        itemmeta.displayName(Component.text(name))
+        val itemMeta = item.itemMeta
+        itemMeta.displayName(Component.text(name))
 
         val list = ArrayList<Component>()
 
@@ -16,9 +16,9 @@ class Item {
             list.add(Component.text(a))
         }
 
-        itemmeta.lore(list)
+        itemMeta.lore(list)
 
-        item.itemMeta = itemmeta
+        item.itemMeta = itemMeta
 
         return item
 

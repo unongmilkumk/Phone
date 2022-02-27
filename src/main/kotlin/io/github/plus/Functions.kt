@@ -5,8 +5,8 @@ import org.bukkit.entity.Player
 import org.bukkit.plugin.Plugin
 import org.bukkit.scheduler.BukkitRunnable
 
-class Functions {
-    fun runTaskTimer(plugin : Plugin?, delay : Long, period : Long, task : () -> Unit): BukkitRunnable {
+
+fun runTaskTimer(plugin : Plugin?, delay : Long, period : Long, task : () -> Unit): BukkitRunnable {
 
         class Runnable: BukkitRunnable() {
             override fun run() {
@@ -20,7 +20,8 @@ class Functions {
         return Runnable()
 
     }
-    fun runDelay(plugin : Plugin?, delay : Long, task : () -> Unit): BukkitRunnable {
+
+fun runDelay(plugin : Plugin?, delay : Long, task : () -> Unit): BukkitRunnable {
 
         class Runnable: BukkitRunnable() {
             override fun run() {
@@ -34,11 +35,11 @@ class Functions {
 
         return Runnable()
 
-    }
-    fun Player.sendActionBar(text : String) {
-        val component: Component = Component.text(text)
+}
 
-        this.sendActionBar(component)
+fun Player.sendActionbar(text : String) {
+    val component: Component = Component.text(text)
 
-    }
+    this.sendActionBar(component)
+
 }
