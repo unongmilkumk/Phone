@@ -31,10 +31,11 @@ class Gui(main: Main) : CommandExecutor, TabCompleter {
                     val config = Config(main)
                     val uuid: UUID = p.uniqueId
                     val point = config.getconfig()!!.getInt("players.$uuid.strength") + config.getconfig()!!.getInt("players.$uuid.defense")
-                        + config.getconfig()!!.getInt("players.$uuid.luck") + config.getconfig()!!.getInt("players.$uuid.health")
+                        + config.getconfig()!!.getInt("players.$uuid.critical") + config.getconfig()!!.getInt("players.$uuid.dodging") + config.getconfig()!!.getInt("players.$uuid.health")
                     config.getconfig()!!.set("players.$uuid.strength", 0)
                     config.getconfig()!!.set("players.$uuid.defense", 0)
-                    config.getconfig()!!.set("players.$uuid.luck", 0)
+                    config.getconfig()!!.set("players.$uuid.critical", 0)
+                    config.getconfig()!!.set("players.$uuid.dodging", 0)
                     config.getconfig()!!.set("players.$uuid.health", 0)
                     config.getconfig()!!.set("players.$uuid.exp", point)
                     config.saveconfig()
