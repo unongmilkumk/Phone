@@ -70,9 +70,10 @@ class Config(mainplugin: Main) {
         if(exist) {
             config.getconfig()!!.set("players.$uuid.strength", 0)
             config.getconfig()!!.set("players.$uuid.defense", 0)
-            config.getconfig()!!.set("players.$uuid.luck", 0)
+            config.getconfig()!!.set("players.$uuid.critical", 0)
             config.getconfig()!!.set("players.$uuid.health", 0)
             config.getconfig()!!.set("players.$uuid.exp", 0)
+            config.getconfig()!!.set("players.$uuid.dodging", 0)
             config.saveconfig()
         }
         return config

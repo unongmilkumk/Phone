@@ -11,6 +11,8 @@ import org.bukkit.inventory.Inventory
 import org.bukkit.inventory.ItemStack
 import io.github.plus.tools.Config
 import io.github.plus.tools.GUI
+import org.bukkit.entity.Item
+import java.lang.Math.floor
 
 val inv: ArrayList<Inventory> = ArrayList()
 
@@ -25,7 +27,7 @@ class Inv(main: Main) : Listener {
     fun onclickGUI(e: InventoryClickEvent) {
         val p: Player = e.whoClicked as Player
         val config = Config(main).loadConfig(p)
-        if(inv.contains(e.inventory)) {
+        if(e.view.title == "${p.name}님의 스탯") {
 
             e.isCancelled = true
 
@@ -33,13 +35,23 @@ class Inv(main: Main) : Listener {
 
             if(item != null) {
                 var xp = config.getconfig()!!.getInt("players.${p.uniqueId}.exp")
-                val strength: Int = config.getconfig()!!.getInt("players.${p.uniqueId}.strength")
-                val defense: Int = config.getconfig()!!.getInt("players.${p.uniqueId}.defense")
-                val luck: Int = config.getconfig()!!.getInt("players.${p.uniqueId}.luck")
-                val health: Int = config.getconfig()!!.getInt("players.${p.uniqueId}.health")
+                val strength : Int = config.getconfig()!!.getInt("players.${p.uniqueId}.strength")
+                val defense : Int = config.getconfig()!!.getInt("players.${p.uniqueId}.defense")
+                val critical : Int = config.getconfig()!!.getInt("players.${p.uniqueId}.critical")
+                val dodging : Int = config.getconfig()!!.getInt("players.${p.uniqueId}.dodging")
+                val health : Int = config.getconfig()!!.getInt("players.${p.uniqueId}.health")
 
                 if(xp >= 70) {
                     xp -= 70
+                    val needxp = 50 + (2 *(p.level + 1 * p.level + 1))
+                    if(p.exp - (70.0 / needxp.toDouble()).toFloat() > 0f){
+                        p.exp -= (70.0 / needxp.toDouble()).toFloat()
+                    }
+                    else{
+                        p.giveExpLevels(-1)
+                        p.exp = p.exp - (70.0 / needxp.toDouble()).toFloat() + 1.0f
+                    }
+
                     config.getconfig()!!.set("players.${p.uniqueId}.exp", xp)
                     config.saveconfig()
                     //val multiply = config.getconfig()!!.getInt("multiply")
@@ -65,19 +77,29 @@ class Inv(main: Main) : Listener {
                         config.getconfig()!!.set("players.${p.uniqueId}.health", health + 1)
                         p.sendMessage("체력 스탯을 찍었습니다")
                         config.saveconfig()
+                        p.maxHealth = 20 + (0.5 * health)
 
                     }
 
-                    if(item.itemMeta.displayName == "운") {
+                    if(item.itemMeta.displayName == "크리티컬") {
 
-                        config.getconfig()!!.set("players.${p.uniqueId}.luck", luck + 1)
-                        p.sendMessage("운 스탯을 찍었습니다")
+                        config.getconfig()!!.set("players.${p.uniqueId}.critical", critical + 1)
+                        p.sendMessage("크리티컬 스탯을 찍었습니다")
                         config.saveconfig()
 
                     }
 
-                    p.closeInventory()
+                    if(item.itemMeta.displayName == "회피") {
 
+                        config.getconfig()!!.set("players.${p.uniqueId}.dodging", dodging + 1)
+                        p.sendMessage("회피 스탯을 찍었습니다")
+                        config.saveconfig()
+
+                    }
+
+                    //p.closeInventory()
+
+                    //p.openInventory(inven)
                     p.openInventory(gui.createGUI("${p.name}님의 스탯", p))
 
                 }
