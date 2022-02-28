@@ -18,7 +18,7 @@ class Gui(main: Main) : CommandExecutor, TabCompleter {
         if (label.equals("stat", true)) {
             val p : Player = sender as Player
             if(sender.type == EntityType.PLAYER) {
-                if (args.size == 1) {
+                if (args.size == 0) {
                     sender.closeInventory()
 
                     val gui = GUI(main)
@@ -27,7 +27,7 @@ class Gui(main: Main) : CommandExecutor, TabCompleter {
 
                     sender.openInventory(inv)
                 }
-                else if (args[0].equals("reset")) {
+                else if (args[0] == "reset") {
                     val config = Config(main)
                     val uuid: UUID = p.uniqueId
                     config.getconfig()!!.set("players.$uuid.strength", 0)
@@ -37,6 +37,7 @@ class Gui(main: Main) : CommandExecutor, TabCompleter {
                     config.getconfig()!!.set("players.$uuid.health", 0)
                     config.getconfig()!!.set("players.$uuid.exp", 0)
                     config.saveconfig()
+                    p.maxHealth=20.0
                 }
             }
         }
