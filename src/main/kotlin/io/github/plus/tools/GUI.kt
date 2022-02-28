@@ -29,19 +29,19 @@ class GUI(main: Main) {
 
         val inv: Inventory = Bukkit.createInventory(null, 27, Component.text(text))
 
+        for(i in 0..26) {
+            inv.setItem(i, item.createItemStack(Material.GRAY_STAINED_GLASS_PANE, " "))
+        }
 
-
-        inv.setItem(9, item.createItemStack(org.bukkit.Material.ACACIA_BOAT, "힘", strength.toString()))
-        inv.setItem(11, item.createItemStack(org.bukkit.Material.ACACIA_BOAT, "방어력", defense.toString()))
-        inv.setItem(13, item.createItemStack(org.bukkit.Material.ACACIA_BOAT, "크리티컬", critical.toString()))
-        inv.setItem(15, item.createItemStack(org.bukkit.Material.ACACIA_BOAT, "체력", health.toString()))
-        inv.setItem(17, item.createItemStack(Material.ACACIA_BOAT, "회피", dodging.toString()))
+        inv.setItem(9, item.createItemStack(org.bukkit.Material.IRON_SWORD, "힘", strength.toString()))
+        inv.setItem(11, item.createItemStack(org.bukkit.Material.NETHERITE_CHESTPLATE, "방어력", defense.toString()))
+        inv.setItem(13, item.createItemStack(org.bukkit.Material.IRON_AXE, "크리티컬", critical.toString()))
+        inv.setItem(15, item.createItemStack(org.bukkit.Material.REDSTONE, "체력", health.toString()))
+        inv.setItem(17, item.createItemStack(Material.FEATHER, "회피", dodging.toString()))
 
         io.github.plus.stat.inv.add(inv)
 
         return inv
-
-
 
     }
 
