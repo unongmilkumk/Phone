@@ -2,10 +2,11 @@ package io.github.plus.tools
 
 import net.kyori.adventure.text.Component
 import org.bukkit.Material
+import org.bukkit.inventory.ItemFlag
 import org.bukkit.inventory.ItemStack
 
 class Item {
-    fun createItemStack(type: Material, name: String, vararg lore: String): ItemStack {
+    fun createItemStack(type: Material, name: String, vararg lore: String, itemFlag: ItemFlag): ItemStack {
         val item = ItemStack(type)
         val itemMeta = item.itemMeta
         itemMeta.displayName(Component.text(name))
@@ -19,6 +20,8 @@ class Item {
         itemMeta.lore(list)
 
         item.itemMeta = itemMeta
+
+        item.addItemFlags(itemFlag)
 
         return item
 

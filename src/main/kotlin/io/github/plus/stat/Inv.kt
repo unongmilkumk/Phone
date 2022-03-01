@@ -49,7 +49,7 @@ class Inv(main: Main) : Listener {
                     //config.saveconfig()
                     //val multiply = config.getconfig()!!.getInt("multiply")
 
-                    if(item.itemMeta.displayName == "힘") {
+                    if(item.itemMeta.displayName == "§l§4힘") {
 
                         config.getconfig()!!.set("players.${p.uniqueId}.strength", strength + 1)
                         p.sendMessage("힘 스탯을 찍었습니다")
@@ -57,7 +57,7 @@ class Inv(main: Main) : Listener {
                         p.setCustomXp(p.getCustomXp() - 70)
                     }
 
-                    if(item.itemMeta.displayName == "방어력") {
+                    if(item.itemMeta.displayName == "§l§a방어력") {
 
                         config.getconfig()!!.set("players.${p.uniqueId}.defense", defense + 1)
                         p.sendMessage("방어력 스탯을 찍었습니다")
@@ -66,7 +66,7 @@ class Inv(main: Main) : Listener {
 
                     }
 
-                    if(item.itemMeta.displayName == "체력") {
+                    if(item.itemMeta.displayName == "§l§c체력") {
 
                         config.getconfig()!!.set("players.${p.uniqueId}.health", health + 1)
                         p.sendMessage("체력 스탯을 찍었습니다")
@@ -76,7 +76,7 @@ class Inv(main: Main) : Listener {
 
                     }
 
-                    if(item.itemMeta.displayName == "크리티컬") {
+                    if(item.itemMeta.displayName == "§l§6크리티컬") {
 
                         config.getconfig()!!.set("players.${p.uniqueId}.critical", critical + 1)
                         p.sendMessage("크리티컬 스탯을 찍었습니다")
@@ -85,7 +85,7 @@ class Inv(main: Main) : Listener {
 
                     }
 
-                    if(item.itemMeta.displayName == "회피") {
+                    if(item.itemMeta.displayName == "§l§b회피") {
 
                         config.getconfig()!!.set("players.${p.uniqueId}.dodging", dodging + 1)
                         p.sendMessage("회피 스탯을 찍었습니다")
