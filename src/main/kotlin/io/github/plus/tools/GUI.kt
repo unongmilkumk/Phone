@@ -33,11 +33,11 @@ class GUI(main: Main) {
             inv.setItem(i, item.createItemStack(Material.GRAY_STAINED_GLASS_PANE, " "))
         }
 
-        inv.setItem(9, item.createItemStack(Material.IRON_SWORD, "힘", strength.toString()))
-        inv.setItem(11, item.createItemStack(Material.NETHERITE_CHESTPLATE, "방어력", defense.toString()))
-        inv.setItem(13, item.createItemStack(Material.IRON_AXE, "크리티컬", critical.toString()))
-        inv.setItem(15, item.createItemStack(Material.REDSTONE, "체력", health.toString()))
-        inv.setItem(17, item.createItemStack(Material.FEATHER, "회피", dodging.toString()))
+        inv.setItem(9, item.createItemStack(Material.IRON_SWORD, "§l§4힘", "§a힘 스텟은 기본 공격력을 상승시켜줍니다!","§e클릭하여 §l§4힘 §r§e스탯을 올리세요.","§4현재 당신의 스탯:" + strength.toString(),"§c실질 데미지: " + 3.0 * ((2.0 / Math.PI) * kotlin.math.atan(strength / 33.0)) + 1.0))
+        inv.setItem(11, item.createItemStack(Material.NETHERITE_CHESTPLATE, "§l§a방어력", "§a방어력 스텟은 데미지를 입었을때 피해를 줄여줍니다!","§e클릭하여 §l§a방어력 §r§e스탯을 올리세요.", "§a현재 당신의 스탯:" + defense.toString(), "§a실질 방어율: " + (1.0 - ((1.6 / Math.PI) * kotlin.math.atan(defense / 26.4))) ))
+        inv.setItem(13, item.createItemStack(Material.IRON_AXE, "§l§6크리티컬", critical.toString()))
+        inv.setItem(15, item.createItemStack(Material.REDSTONE, "§l§c체력", health.toString()))
+        inv.setItem(17, item.createItemStack(Material.FEATHER, "§l§b회피", dodging.toString()))
 
         io.github.plus.stat.inv.add(inv)
 
