@@ -1,7 +1,9 @@
 package io.github.plus.event
 
 import io.github.plus.Main
+import io.github.plus.getCustomXp
 import io.github.plus.sendActionbar
+import io.github.plus.setCustomXp
 import io.github.plus.tools.Config
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -14,23 +16,11 @@ class CalculateExp(main : Main) : Listener {
     @EventHandler
     fun onGetExp(e : PlayerExpChangeEvent){
         val p = e.player
-        val config = Config(main).loadConfig(p)
-        var totalXp = config.getconfig()!!.getInt("players.${p.uniqueId}.exp")
         val amount = e.amount
-        totalXp += amount
-        config.getconfig()!!.set("players.${p.uniqueId}.exp", totalXp)
-        config.saveconfig()
+        val totalXp = p.getCustomXp()
         e.amount = 0
-        val lv = e.player.level
-        val needxp = 50 + (2 *(lv + 1 * lv + 1))
-        val rate = amount.toDouble() / needxp.toDouble()
+        p.setCustomXp(totalXp + amount)
         p.sendActionbar("§f[§e알림§f] $amount §cEXP")
-        if(p.exp + rate.toFloat() < 1.0f) { p.exp += rate.toFloat() }
-        else{
-            val addedlv = floor(p.exp + rate.toFloat()).toInt()
-            p.giveExpLevels(addedlv)
-            p.exp = (p.exp + rate.toFloat()) - addedlv.toFloat()
-        }
     }
     @EventHandler
     fun onLevelUp(e : PlayerLevelChangeEvent){

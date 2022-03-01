@@ -79,7 +79,6 @@ class Stat(main: Main): Listener {
              val defense = victimConfig.getconfig()!!.getInt("players.${e.entity.uniqueId}.defense")
              e.damage *= (1.0 - ((1.6 / PI) * kotlin.math.atan(defense / 26.4)))
          }
-
      }
 
 

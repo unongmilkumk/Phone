@@ -35,9 +35,8 @@ class Gui(main: Main) : CommandExecutor, TabCompleter {
                     config.getconfig()!!.set("players.$uuid.critical", 0)
                     config.getconfig()!!.set("players.$uuid.dodging", 0)
                     config.getconfig()!!.set("players.$uuid.health", 0)
-                    config.getconfig()!!.set("players.$uuid.exp", 0)
                     config.saveconfig()
-                    p.maxHealth=20.0
+                    p.maxHealth = 20.0
                 }
             }
         }

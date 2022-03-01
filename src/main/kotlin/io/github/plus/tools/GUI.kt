@@ -33,10 +33,10 @@ class GUI(main: Main) {
             inv.setItem(i, item.createItemStack(Material.GRAY_STAINED_GLASS_PANE, " "))
         }
 
-        inv.setItem(9, item.createItemStack(org.bukkit.Material.IRON_SWORD, "힘", strength.toString()))
-        inv.setItem(11, item.createItemStack(org.bukkit.Material.NETHERITE_CHESTPLATE, "방어력", defense.toString()))
-        inv.setItem(13, item.createItemStack(org.bukkit.Material.IRON_AXE, "크리티컬", critical.toString()))
-        inv.setItem(15, item.createItemStack(org.bukkit.Material.REDSTONE, "체력", health.toString()))
+        inv.setItem(9, item.createItemStack(Material.IRON_SWORD, "힘", strength.toString()))
+        inv.setItem(11, item.createItemStack(Material.NETHERITE_CHESTPLATE, "방어력", defense.toString()))
+        inv.setItem(13, item.createItemStack(Material.IRON_AXE, "크리티컬", critical.toString()))
+        inv.setItem(15, item.createItemStack(Material.REDSTONE, "체력", health.toString()))
         inv.setItem(17, item.createItemStack(Material.FEATHER, "회피", dodging.toString()))
 
         io.github.plus.stat.inv.add(inv)

@@ -1,6 +1,8 @@
 package io.github.plus.stat
 
 import io.github.plus.Main
+import io.github.plus.getCustomXp
+import io.github.plus.setCustomXp
 import net.kyori.adventure.text.TextComponent
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
@@ -34,26 +36,17 @@ class Inv(main: Main) : Listener {
             val item: ItemStack? = e.currentItem
 
             if(item != null) {
-                var xp = config.getconfig()!!.getInt("players.${p.uniqueId}.exp")
                 val strength : Int = config.getconfig()!!.getInt("players.${p.uniqueId}.strength")
                 val defense : Int = config.getconfig()!!.getInt("players.${p.uniqueId}.defense")
                 val critical : Int = config.getconfig()!!.getInt("players.${p.uniqueId}.critical")
                 val dodging : Int = config.getconfig()!!.getInt("players.${p.uniqueId}.dodging")
                 val health : Int = config.getconfig()!!.getInt("players.${p.uniqueId}.health")
 
-                if(xp >= 70) {
-                    xp -= 70
-                    val needxp = 50 + (2 *(p.level + 1 * p.level + 1))
-                    if(p.exp - (70.0 / needxp.toDouble()).toFloat() > 0f){
-                        p.exp -= (70.0 / needxp.toDouble()).toFloat()
-                    }
-                    else{
-                        p.giveExpLevels(-1)
-                        p.exp = p.exp - (70.0 / needxp.toDouble()).toFloat() + 1.0f
-                    }
+                if(p.getCustomXp() >= 70) {
 
-                    config.getconfig()!!.set("players.${p.uniqueId}.exp", xp)
-                    config.saveconfig()
+
+                    //config.getconfig()!!.set("players.${p.uniqueId}.exp", xp)
+                    //config.saveconfig()
                     //val multiply = config.getconfig()!!.getInt("multiply")
 
                     if(item.itemMeta.displayName == "힘") {
@@ -61,7 +54,7 @@ class Inv(main: Main) : Listener {
                         config.getconfig()!!.set("players.${p.uniqueId}.strength", strength + 1)
                         p.sendMessage("힘 스탯을 찍었습니다")
                         config.saveconfig()
-
+                        p.setCustomXp(p.getCustomXp() - 70)
                     }
 
                     if(item.itemMeta.displayName == "방어력") {
@@ -69,6 +62,7 @@ class Inv(main: Main) : Listener {
                         config.getconfig()!!.set("players.${p.uniqueId}.defense", defense + 1)
                         p.sendMessage("방어력 스탯을 찍었습니다")
                         config.saveconfig()
+                        p.setCustomXp(p.getCustomXp() - 70)
 
                     }
 
@@ -78,6 +72,7 @@ class Inv(main: Main) : Listener {
                         p.sendMessage("체력 스탯을 찍었습니다")
                         config.saveconfig()
                         p.maxHealth = 20 + (0.5 * health)
+                        p.setCustomXp(p.getCustomXp() - 70)
 
                     }
 
@@ -86,6 +81,7 @@ class Inv(main: Main) : Listener {
                         config.getconfig()!!.set("players.${p.uniqueId}.critical", critical + 1)
                         p.sendMessage("크리티컬 스탯을 찍었습니다")
                         config.saveconfig()
+                        p.setCustomXp(p.getCustomXp() - 70)
 
                     }
 
@@ -94,17 +90,15 @@ class Inv(main: Main) : Listener {
                         config.getconfig()!!.set("players.${p.uniqueId}.dodging", dodging + 1)
                         p.sendMessage("회피 스탯을 찍었습니다")
                         config.saveconfig()
+                        p.setCustomXp(p.getCustomXp() - 70)
 
                     }
 
-                    //p.closeInventory()
-
-                    //p.openInventory(inven)
                     p.openInventory(gui.createGUI("${p.name}님의 스탯", p))
 
                 }
                 else {
-                    p.sendMessage("당신은 " + (70 - xp).toString() + "만큼의 xp가 더 필요합니다")
+                    p.sendMessage("당신은 " + (70 - p.getCustomXp()).toString() + "만큼의 xp가 더 필요합니다")
                 }
 
 
@@ -121,6 +115,7 @@ class Inv(main: Main) : Listener {
         }
 
     }
+    
     init{
         this.main = main
     }
