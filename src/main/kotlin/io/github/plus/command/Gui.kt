@@ -12,7 +12,7 @@ import org.bukkit.entity.Player
 import org.bukkit.inventory.Inventory
 import java.util.*
 
-class Gui(main: Main) : CommandExecutor, TabCompleter {
+class Gui(main: Main) : CommandExecutor {
     private val main: Main
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         if (label.equals("stat", true)) {
@@ -45,37 +45,5 @@ class Gui(main: Main) : CommandExecutor, TabCompleter {
     }
     init {
         this.main = main
-    }
-
-    override fun onTabComplete(sender: CommandSender, command: Command, alias: String, args: Array<out String>): MutableList<String>? {
-        return if (alias.equals("sample", true)) {
-            if (args.size === 1) {
-                val returns1 : MutableList<String> = ArrayList()
-                returns1.add("sampleTab")
-                val returns2 : MutableList<String> = ArrayList()
-                for (returns in returns1) {
-                    if (returns.lowercase(Locale.getDefault()).startsWith(args[0].lowercase(Locale.getDefault()))) {
-                        returns2.add(returns)
-                    }
-                }
-                returns2
-            } else if (args.size === 2) {
-                val returns1: MutableList<String> = ArrayList()
-                if (args[0].equals("set", true)) {
-                    returns1.add("sampleTab2")
-                } else {
-                    return mutableListOf("")
-                }
-                val returns2: MutableList<String> = ArrayList()
-                for (returns in returns1) {
-                    if (returns.lowercase(Locale.getDefault()).startsWith(args[1].lowercase(Locale.getDefault()))) {
-                        returns2.add(returns)
-                    }
-                }
-                return returns2
-            } else {
-                return mutableListOf("")
-            }
-        } else return null
     }
 }

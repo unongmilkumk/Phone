@@ -4,6 +4,7 @@ import event.JavaEvent
 import io.github.plus.command.Gui
 import io.github.plus.event.TestEvent
 import io.github.plus.command.CommandSample
+import io.github.plus.command.GuiTabCompleter
 import io.github.plus.event.CalculateExp
 import io.github.plus.event.Stat
 import io.github.plus.tools.Config
@@ -25,6 +26,7 @@ class Main : JavaPlugin(), Listener {
 
         //커맨드 setTabCompleter
         server.getPluginCommand("sample")?.tabCompleter = CommandSample()
+        server.getPluginCommand("stat")?.tabCompleter = GuiTabCompleter()
 
         //이벤트
         server.pluginManager.registerEvents(TestEvent(), this@Main)
