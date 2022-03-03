@@ -1,6 +1,7 @@
 package io.github.plus.event
 
 import io.github.plus.Main
+import io.github.plus.stat.StatAtt
 import io.github.plus.tools.Config
 import org.bukkit.entity.*
 import org.bukkit.event.EventHandler
@@ -11,9 +12,9 @@ import java.lang.Math.PI
 import java.util.*
 import kotlin.random.Random.Default.nextDouble
 
-class Stat(main: Main): Listener {
+class Stat(private val main: Main): Listener {
 
-    private val main: Main
+    private val statatt = StatAtt(main)
 
     @EventHandler
     fun onEntityDamageByEntity(e: EntityDamageByEntityEvent) {
@@ -72,6 +73,8 @@ class Stat(main: Main): Listener {
             }
         }
 
+        statatt.displayDamage(e.damage, e.entity as LivingEntity)
+
     }
      fun onEntityDamage(e : EntityDamageEvent){
          if(e.entity is Player) {
@@ -79,11 +82,10 @@ class Stat(main: Main): Listener {
              val defense = victimConfig.getconfig()!!.getInt("players.${e.entity.uniqueId}.defense")
              e.damage *= (1.0 - ((1.6 / PI) * kotlin.math.atan(defense / 26.4)))
          }
+
+
+         statatt.displayDamage(e.damage, e.entity as LivingEntity)
+
      }
-
-
-    init {
-        this.main = main
-    }
 
 }
