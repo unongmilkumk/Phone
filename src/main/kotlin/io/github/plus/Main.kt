@@ -35,13 +35,10 @@ class Main : JavaPlugin(), Listener {
         server.pluginManager.registerEvents(Inv(this@Main), this@Main)
         server.pluginManager.registerEvents(Stat(this@Main), this@Main)
 
-        config.reloadconfig()
-
     }
 
     override fun onDisable() {
         server.consoleSender.sendMessage("${ChatColor.GREEN}플러그인이 비활성화 되었습니다.")
-        config.saveconfig()
 
     }
 
