@@ -76,14 +76,17 @@ class Stat(private val main: Main): Listener {
         statatt.displayDamage(e.damage, e.entity as LivingEntity, e.isCritical)
 
     }
-     fun onEntityDamage(e : EntityDamageEvent){
+
+    @EventHandler
+    fun onEntityDamage(e : EntityDamageEvent){
          if(e.entity is Player) {
              val victimConfig = Config(main).loadConfig(e.entity as Player)
              val defense = victimConfig.getconfig()!!.getInt("players.${e.entity.uniqueId}.defense")
              e.damage *= (1.0 - ((1.6 / PI) * kotlin.math.atan(defense / 26.4)))
          }
 
+         statatt.displayDamage(e.damage, e.entity as LivingEntity, false)
 
-     }
+    }
 
 }
