@@ -13,7 +13,7 @@ class StatAtt(private val main: Main) {
     fun displayDamage(damage: Double, entity: LivingEntity) {
 
         var location = entity.eyeLocation
-        location = location.add(random.nextDouble()*2.0-1.0, random.nextDouble()*2.0+99.5, random.nextDouble()*2.0-1.0)
+        location = location.add(random.nextDouble()*2.0-1.0, random.nextDouble()*2.0+99.2, random.nextDouble()*2.0-1.0)
 
         val armorStand: ArmorStand = entity.world.spawnEntity(location, EntityType.ARMOR_STAND) as ArmorStand
 
@@ -32,8 +32,7 @@ class StatAtt(private val main: Main) {
                     cancel()
                 }
                 else {
-                    location.y=location.y-100.0
-                    println(location.y)
+                    location.y-=100.0
                     armorStand.teleport(location)
                     boolean = true
                 }
