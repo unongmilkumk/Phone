@@ -73,7 +73,12 @@ class Stat(private val main: Main): Listener {
             }
         }
 
-        statatt.displayDamage(e.damage, e.entity as LivingEntity)
+        if (e.isCritical) {
+            statatt.displayDamage(e.damage, e.entity as LivingEntity, true)
+        } else {
+            statatt.displayDamage(e.damage, e.entity as LivingEntity, false)
+        }
+
 
     }
      fun onEntityDamage(e : EntityDamageEvent){
@@ -83,8 +88,7 @@ class Stat(private val main: Main): Listener {
              e.damage *= (1.0 - ((1.6 / PI) * kotlin.math.atan(defense / 26.4)))
          }
 
-
-         statatt.displayDamage(e.damage, e.entity as LivingEntity)
+         statatt.displayDamage(e.damage, e.entity as LivingEntity, false)
 
      }
 
