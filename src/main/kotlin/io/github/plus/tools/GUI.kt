@@ -9,7 +9,6 @@ import org.bukkit.inventory.Inventory
 import org.bukkit.inventory.ItemFlag
 
 class GUI(main: Main) {
-
     private val main: Main
 
     fun createGUI(text: String, player: Player): Inventory {
@@ -33,12 +32,11 @@ class GUI(main: Main) {
             inv.setItem(i, item.createItemStack(Material.GRAY_STAINED_GLASS_PANE, " ", itemFlag = ItemFlag.HIDE_ATTRIBUTES))
         }
 
-        inv.setItem(9, item.createItemStack(Material.IRON_SWORD, "§l§4힘", "§a힘 스탯은 기본 공격력을 상승시켜줍니다!","§e클릭하여 §l§4힘 §r§e스탯을 올리세요.","§4현재 당신의 스탯: $strength","§c실질 데미지: ${(3.0 * ((2.0 / Math.PI) * kotlin.math.atan(strength / 33.0)) + 1.0)}배", itemFlag = ItemFlag.HIDE_ATTRIBUTES))
-        inv.setItem(11, item.createItemStack(Material.NETHERITE_CHESTPLATE, "§l§a방어력", "§a방어력 스탯은 데미지를 입었을때 피해를 줄여줍니다!","§e클릭하여 §l§a방어력 §r§e스탯을 올리세요.", "§a현재 당신의 스탯: $defense", "§a실질 방어율: ${((1.6 / Math.PI) * kotlin.math.atan(defense / 26.4))*100.0}% 감소", itemFlag = ItemFlag.HIDE_ATTRIBUTES))
-        inv.setItem(13, item.createItemStack(Material.IRON_AXE, "§l§6크리티컬", critical.toString(), itemFlag = ItemFlag.HIDE_ATTRIBUTES))
-        inv.setItem(15, item.createItemStack(Material.REDSTONE, "§l§c체력", health.toString(), itemFlag = ItemFlag.HIDE_ATTRIBUTES))
-        inv.setItem(17, item.createItemStack(Material.FEATHER, "§l§b회피", dodging.toString(), itemFlag = ItemFlag.HIDE_ATTRIBUTES))
-
+        inv.setItem(9, item.createItemStack(Material.IRON_SWORD, "§4§l힘", "§4§l힘 §a스탯은 기본 공격력을 상승시켜줍니다!","§e클릭하여 §4§l힘 §r§e스탯을 올리세요.","§4현재 당신의 스탯: $strength","§c실질 데미지: ${(3.0 * ((2.0 / Math.PI) * kotlin.math.atan(strength / 33.0)) + 1.0)}배 증가", itemFlag = ItemFlag.HIDE_ATTRIBUTES))
+                inv.setItem(11, item.createItemStack(Material.NETHERITE_CHESTPLATE, "§2§l방어력", "§2방어력 §a스탯은 데미지를 입었을때 피해를 줄여줍니다!","§e클릭하여 §l§2방어력 §r§e스탯을 올리세요.", "§2현재 당신의 스탯: $defense", "§a실질 방어율: ${(1.6 / Math.PI) * kotlin.math.atan(defense / 26.4) * 100.0}% 감소", itemFlag = ItemFlag.HIDE_ATTRIBUTES))
+                inv.setItem(13, item.createItemStack(Material.IRON_AXE, "§6§l크리티컬", "§6§l크리티컬 §a스탯은 크리티컬 시 더 많은 데미지를 줍니다.","§e클릭하여 §l§6크리티컬 §r§e스탯을 올리세요.","§6현재 당신의 스탯: $critical", "§c실질 데미지: ${(1.0 * ((2.0 / Math.PI) * kotlin.math.atan(critical / 33.0)) + 1.0)}배 증가", itemFlag = ItemFlag.HIDE_ATTRIBUTES))
+                inv.setItem(15, item.createItemStack(Material.REDSTONE, "§6§l체력", "§c§l최대체력 §a스탯은 체력을 상승시켜줍니다.", "§e클릭하여 §l§c체력 §r§e스탯을 올리세요.","§c현재 당신의 스탯: $health",itemFlag = ItemFlag.HIDE_ATTRIBUTES))
+                inv.setItem(17, item.createItemStack(Material.FEATHER, "§b§l회피", "§b§l회피 §a스탯은 피격시 확률로 피합니다.","§e클릭하여 §l§b회피 §r§e스탯을 올리세요.","현재 당신의 스탯: $dodging",itemFlag = ItemFlag.HIDE_ATTRIBUTES))
         io.github.plus.stat.inv.add(inv)
 
         return inv
@@ -48,5 +46,4 @@ class GUI(main: Main) {
     init {
         this.main = main
     }
-
 }

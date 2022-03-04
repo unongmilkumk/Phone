@@ -8,7 +8,7 @@ import kotlin.math.roundToInt
 
 class StatAtt(private val main: Main) {
     private val random: SecureRandom = SecureRandom()
-    fun displayDamage(damage: Double, entity: LivingEntity, critical: Boolean) {
+    fun displayDamage(damage: Double, entity: LivingEntity) {
 
         var location = entity.eyeLocation
         location = location.add(random.nextDouble()*2.0-1.0, random.nextDouble()*2.0+9.5, random.nextDouble()*2.0-1.0)
@@ -17,12 +17,7 @@ class StatAtt(private val main: Main) {
 
 //        armorStand.isInvisible = true
         armorStand.isInvisible = true
-        if (critical) {
-            armorStand.customName = "§c${(damage*10.0).roundToInt()/10.0}"
-        }
-        else {
-            armorStand.customName = "§e${(damage*10.0).roundToInt()/10.0}"
-        }
+        armorStand.customName = "${(damage*10.0).roundToInt()/10.0}"
         armorStand.isCustomNameVisible = true
         armorStand.setGravity(false)
         armorStand.isMarker = true
